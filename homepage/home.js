@@ -1,92 +1,86 @@
 function onMenuClick() {
     const navBar = document.getElementById('navigation-bar');
-    navBar.classList.toggle('responsive'); // Toggle the menu visibility
+    navBar.classList.toggle('responsive'); 
 }
 
-// Add active class to the clicked link
 const navLinks = document.querySelectorAll('.nav-bar a');
 navLinks.forEach(link => {
     link.addEventListener('click', function() {
-        navLinks.forEach(link => link.classList.remove('active')); // Remove active from all links
-        this.classList.add('active'); // Add active to clicked link
+        navLinks.forEach(link => link.classList.remove('active')); 
+        this.classList.add('active'); 
     });
 });
 
-// script.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const scrollContainer = document.querySelector('.scroll-container');
     
-    // Example: Scroll the container 100px to the right
+ 
     function scrollRight() {
         scrollContainer.scrollLeft += 100;
     }
 
-    // Example: Scroll the container 100px to the left
+
     function scrollLeft() {
         scrollContainer.scrollLeft -= 100;
     }
 
-    // You can attach these functions to buttons or trigger them based on some event
+   
     document.querySelector('#scrollRightBtn').addEventListener('click', scrollRight);
     document.querySelector('#scrollLeftBtn').addEventListener('click', scrollLeft);
 });
 
-// JavaScript for the slider functionality
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 const dots = document.querySelectorAll(".dots li");
 const list = document.querySelector(".list");
-let currentIndex = 0; // Starting index of the image
+let currentIndex = 0;
 
-// Array of images
+
 const totalSlides = document.querySelectorAll(".item").length;
 
 function updateSlider() {
-    // Move the slider by shifting the items based on the current index
+  
     list.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-    // Update the active dot
     dots.forEach((dot, index) => {
         dot.classList.toggle("active", index === currentIndex);
     });
 }
 
-// slideshow//
-// Set the interval time (in milliseconds)
+
 const intervalTime = 10000; // 5 seconds
 
-// Function to automatically go to the next slide
+
 const autoSlide = () => {
     currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
     updateSlider();
 };
 
-// Start the automatic slide transition
+
 const slideInterval = setInterval(autoSlide, intervalTime);
 
-// Event listeners for buttons
 prevButton.addEventListener("click", () => {
     currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
     updateSlider();
-    resetAutoSlide(); // Reset the auto slide interval on manual interaction
+    resetAutoSlide(); 
 });
 
 nextButton.addEventListener("click", () => {
     currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
     updateSlider();
-    resetAutoSlide(); // Reset the auto slide interval on manual interaction
+    resetAutoSlide(); 
 });
 
-// Event listeners for dots
 dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
         currentIndex = index;
         updateSlider();
-        resetAutoSlide(); // Reset the auto slide interval on manual interaction
+        resetAutoSlide(); 
     });
 });
 
-// Function to reset the auto slide interval
+
 const resetAutoSlide = () => {
     clearInterval(slideInterval);
     setInterval(autoSlide, intervalTime);
