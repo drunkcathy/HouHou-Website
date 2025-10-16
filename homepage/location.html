@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/x-icon" href="/ASSETS/logo.jpg"/>
+    <title>HOU HOU SANDWICH BAR</title>
+    <link href="contact.css" rel="stylesheet"/>
+    <script src="contact.js" defer></script>
+
+    <!-- Font style for location title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chango&display=swap" rel="stylesheet">
+
+    <!-- Symbol or logo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+    <!-- Header with navigation -->
+    <div class="page-header">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+            <i class="fa-solid fa-bars"></i> 
+        </a>
+
+        <div id="navigation-bar" class="nav-bar">
+            <a href="home.html">home</a>
+            <a href="story.html">story</a>
+            <a href="order">order</a>
+            <a class="active" href="location.html">location</a>
+            <a href="contact.html">contact</a>
+            
+        </div>
+
+        <div class="header-right">
+            <button>Sign in</button>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="form contact">
+        <!-- Left side: Contact details -->
+        <div class="left-side">
+            <div class="text">
+                <h1>Get in Touch</h1>
+                <p>26 Jalan Pangkor<br>10050 Georgetown</p>
+                <p>+6016 597 2170<br>3sandwich@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Right side: Contact form -->
+        <div class="right-side">
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Location Section -->
+    <div id="location" class="location-section">
+        <h2 style="font-family: 'Chango', cursive;">Find Us Here</h2>
+        <p>We're located at 26 Jalan Pangkor, 10050 Georgetown. Come visit us!</p>
+        <!-- Example embedded map (you can replace with actual map if needed) -->
+        <iframe 
+            src="https://www.google.com/maps?q=Hou+Hou,+Jalan+Permai&output=embed"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Hou Hou Sandwich Bar. All rights reserved.</p>
+    </footer>
+</body>
+</html>

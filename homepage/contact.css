@@ -1,0 +1,445 @@
+:root {
+    --bgcolor: #eee8b3;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .page-header {
+    background-color: var(--bgcolor);
+    padding: 1.3rem;
+    display: flex;
+    height: 90px;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    color: black;
+    align-self: center;
+    margin-left: 1.2rem;
+    font-size: 2.5rem;
+  }
+  
+  .nav-bar {
+    margin: auto;
+    z-index: 10; /* Ensure it is on top */
+  }
+  
+  .nav-bar a {
+    color: black;
+    padding: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: text-decoration 0.3s ease;
+    pointer-events: auto; /* Ensure links respond to hover */
+  }
+  
+  .nav-bar a:hover {
+    background-color: #f1e550;
+    color: whitesmoke;
+  }
+  
+  .nav-bar a.active {
+    background-color: #f1e550;
+    color: whitesmoke;
+  }
+  
+  .menu-icon {
+    color: black;
+    cursor: pointer;
+    display: none;
+    z-index: 11; /* Ensure it's on top when clicked */
+  }
+  
+  button {
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.9rem;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .nav-bar {
+      display: none;
+      position: absolute;
+      top: 3.7rem;
+      left: 0;
+      width: 100%;
+      background-color: var(--bgcolor);
+      text-align: center;
+      z-index: 10; /* Ensure it's above other elements */
+    }
+  
+    .nav-bar.responsive {
+      display: block;
+    }
+  
+    .nav-bar a {
+      display: block;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    button {
+      padding: 0.4rem;
+    }
+  
+    .logo {
+      font-size: 1.4rem;
+    }
+  }
+
+  /* .contact: Adding a background color and border */
+.contact {
+  background-color: #eee8b3;
+  display: flex; 
+  height: 100vh; 
+}
+
+/* .form: Full height, spanning 50% width */
+.form {
+  display: flex; /* Align content in rows */
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+/* Left side (text) */
+.left-side {
+  width: 50%; /* Take up half of the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.text {
+  max-width: 80%; /* Ensure text doesn't overflow */
+  text-align: center;
+}
+
+/* Right side (form) */
+.right-side {
+  width: 50%; /* Take up the other half */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #e0e9b4
+  ;
+}
+
+.details {
+  width: 80%; /* Make the form responsive and centered */
+}
+
+/* Style the input fields */
+.fname, .lname, .email, .message {
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea{
+  padding: 0.8rem;
+  width: 560px;
+  height:60px;
+  border-radius: 5px;
+  border-radius: 1px solid #ccc;
+}
+
+/* Submit button styling */
+.button button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #f1e550;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button button:hover {
+  background-color: #f1c400;
+  display:block;
+}
+
+.error{
+  color: red;
+  font-size: 18px;
+}
+
+.text h1{
+  margin-bottom: 100px;
+}
+
+/*locations gallery*/
+.slider .title-location{
+  text-align: center;
+}
+
+div.gallery {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Description styling */
+div.desc {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Container for the gallery section */
+.gallery4 {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f5d9 ;
+  font-size: 27px;
+  height: 100%; /* Ensure it takes full height */
+  justify-content: flex-end; /* Push the content to the bottom */
+  padding-bottom: 20px; /* Optional, adjust space at the bottom */
+}
+
+.gallery4 .title {
+  text-align: center;
+  margin-top: 35px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: bold;
+  margin-bottom: 10px; /* Optional: Add some spacing between the title and the content below */
+}
+
+/* Centered paragraph */
+.paragraph {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Gallery layout using Flexbox */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Space out the items */
+}
+
+.responsive {
+  flex: 1 1 24%; /* Default to 4 items per row */
+  padding: 6px;
+  margin: 10px;
+  box-sizing: border-box;
+  border: 3px solid #ccc;  /* Apply border to each image container */
+  border-radius: 8px; /* Optional: rounded corners for each image */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow effect for the image */
+}
+
+/* Hover effect for image border */
+.responsive:hover {
+  border-color: #777; /* Change border color on hover */
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    flex: 1 1 49%; /* Two items per row on smaller screens */
+    margin: 6px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    flex: 1 1 100%; /* One item per row on extra small screens */
+  }
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*slider gallery*/
+
+/* Basic styling for slider */
+/* Slider container */
+.slider {
+  position: relative;
+  width: 600px;
+  height:800px;
+  max-width: 800px;  /* Slider container width */
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+/* List of images */
+.list {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition effect */
+}
+
+/* Each item (image container) */
+.item {
+  flex: 0 0 100%; /* Each item takes 100% width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Window-shaped images (16:9 aspect ratio) */
+.item img {
+  width: 100%;   /* Make the image width 100% of the container */
+  height: auto;  /* Maintain aspect ratio */
+  max-height: 100%; /* Ensure height doesn't exceed container height */
+  object-fit: cover; 
+  border-top-left-radius: 600px;
+  border-top-right-radius: 600px;
+}
+
+/* Navigation buttons (Prev and Next) */
+  .buttons {
+    position: absolute;
+    top: 50%;  /* Adjust vertical positioning */
+    left: 10px; /* Move to the left side of the slider */
+    right: 10px; /* Move to the right side of the slider */
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%); /* Keep them vertically centered */
+    z-index: 10; /* Ensure the buttons stay on top of images */
+  }
+
+  
+#prev, #next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#prev:hover, #next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots navigation */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dots li {
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots li.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.loc-title{
+  font-size: 60px;
+  font-family: "Chango", sans-serif;
+  font-style:normal;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/*footer*/
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem ;
+  width:100%;
+  overflow:auto ;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-left {
+  flex: 1;
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;  /* Align items vertically */
+}
+
+.footer-left h3,
+.footer-left h4 {
+  margin-bottom: 1rem;
+}
+
+.footer-left a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+.footer-left a:hover {
+  text-decoration: underline;
+}
+
+/* Add space between text and icons */
+.footer-left .footer-icon {
+  display: flex;
+  align-items: center;
+  margin-left: -23rem; 
+  margin-top: -7.5rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-right h3 {
+  margin-bottom: 1rem;
+}
+
+/* Ensure the icons are properly aligned and spaced */
+.footer-icon a {
+  color: #fff;
+  margin: 0 1rem; /* Add spacing between icons */
+}
+
+.footer-icon a:hover {
+  color: #f39c12;
+}

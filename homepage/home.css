@@ -1,0 +1,589 @@
+:root {
+  --bgcolor: #eee8b3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-header {
+  background-color: var(--bgcolor);
+  padding: 1.3rem;
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+}
+
+.logo {
+  color: black;
+  align-self: center;
+  margin-left: 1.2rem;
+  font-size: 2.5rem;
+}
+
+.nav-bar {
+  margin: auto;
+  z-index: 10; /* Ensure it is on top */
+}
+
+.nav-bar a {
+  color: black;
+  padding: 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: text-decoration 0.3s ease;
+  pointer-events: auto; /* Ensure links respond to hover */
+}
+
+.nav-bar a:hover {
+  background-color: #f1e550;
+  color: whitesmoke;
+}
+
+.nav-bar a.active {
+  background-color: #f1e550;
+  color: whitesmoke;
+}
+
+.menu-icon {
+  color: black;
+  cursor: pointer;
+  display: none;
+  z-index: 11; /* Ensure it's on top when clicked */
+}
+
+button {
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.9rem;
+}
+
+@media screen and (max-width: 700px) {
+  .nav-bar {
+    display: none;
+    position: absolute;
+    top: 3.7rem;
+    left: 0;
+    width: 100%;
+    background-color: var(--bgcolor);
+    text-align: center;
+    z-index: 10; /* Ensure it's above other elements */
+  }
+
+  .nav-bar.responsive {
+    display: block;
+  }
+
+  .nav-bar a {
+    display: block;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  button {
+    padding: 0.4rem;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+}
+
+/*footer*/
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 0;
+  width:100%;
+  overflow:auto ;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-left {
+  flex: 1;
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;  /* Align items vertically */
+}
+
+.footer-left h3,
+.footer-left h4 {
+  margin-bottom: 1rem;
+}
+
+.footer-left a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+.footer-left a:hover {
+  text-decoration: underline;
+}
+
+/* Add space between text and icons */
+.footer-left .footer-icon {
+  display: flex;
+  align-items: center;
+  margin-left: -23rem; 
+  margin-top: -7.5rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-right h3 {
+  margin-bottom: 1rem;
+}
+
+/* Ensure the icons are properly aligned and spaced */
+.footer-icon a {
+  color: #fff;
+  margin: 0 1rem; /* Add spacing between icons */
+}
+
+.footer-icon a:hover {
+  color: #f39c12;
+}
+
+/* Ensure that the container has horizontal scrolling when content overflows */
+.picture {
+  display: flex;
+  justify-content: center;  /* Center the text horizontally */
+  align-items: center;      /* Center the text vertically */
+  position: relative;
+  width: 100%;
+  height: 700px;
+  min-height: 50px;
+  overflow-x: auto; /* Enable horizontal scrolling only when needed */
+}
+
+.picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensure the image covers the area without distortion */
+}
+
+/* Optional: Add styling to handle content inside the .picture container */
+.text-overlay {
+  position: absolute;   /* Position the text on top of the image */
+  color: white;
+  font-size: 11rem;
+  font-weight: bold;
+  text-shadow: 4px 4px 6px rgb(229, 224, 199);  /* Add a shadow for readability */
+  text-align: center;  /* Center align the text */
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+}
+
+.text-overlay .btn{
+  border: 10px solid white;
+  border-radius:40px;
+  background-color:white;
+  color:black;
+  padding:10px 20px;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:20px;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.btn{
+border-color: #fff;
+color:antiquewhite;
+}
+
+.btn:hover{
+  border: 5px solid #a6a6a3 ;
+  background-color: #e6e5e0 ;
+  color:darkgray
+}
+
+.btn:active{
+  background-color: grey;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.picture2{
+  background-color: #eee8b3;
+  height:800px;
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+.picture2 .cover2{
+  padding:20px;
+  height:700px;
+  width: 620px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.cover-right{
+  width:100%;
+  text-align: center;
+  padding-left: 730px;
+  padding-bottom: 900px;
+  transform: translate(-0.7%, -48%);
+  text-align: left;
+}
+
+p{
+  padding:10px;
+}
+
+.text2{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.text3{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.text4{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.heading-cover2{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 70px;
+  margin-bottom: 30px;
+}
+
+.text-overlay2 {
+  position: absolute;
+  top: 42%;  /* Vertically center the text */
+  left: 24%;  /* Horizontally center the text */
+  transform: translate(-50%, -50%);  /* Adjust for exact centering */
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  display: flex;
+  flex-direction: column;  /* Stack the elements vertically */
+  align-items: center;  /* Center the content horizontally */
+}
+
+.text-overlay2 .btn2 {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f1e9a4;
+  border: 2px solid transparent; /* Avoid border color showing on hover */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 1.2rem; /* Optional: Adjust font size */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.text-overlay2 .btn2:hover {
+  background-color: #e67e22; /* Change background color on hover */
+  color: whitesmoke; /* Change text color on hover */
+}
+
+.text-overlay2 .btn2:active {
+  background-color: grey;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px); /* Adds a button press effect */
+}
+
+.picture3{
+  background-color:#f7f7c6;
+}
+
+.cover3{
+  height: 500px;
+  width:400px;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+/*section 3*/
+
+/* Section 3 container */
+.section3 {
+  display: flex; /* Use flexbox to split the section into two parts */
+  height: 100vh; /* Make the section take up the full height of the viewport */
+  background-color: #f7f7c6;
+}
+
+/* Split-left: Text and button */
+.split-left {
+  flex: 1; /* Takes up 50% of the available space */
+  background-color: #f1e9a4; /* Optional background color for the left side */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 50px;
+  height:600px;
+  width:150px;
+}
+
+.center {
+  color: black;
+}
+
+.split-left h3 {
+  margin-bottom: 10px; /* Adjust spacing between the texts */
+}
+
+.split-left .order-button {
+  margin-top: 20px; /* Adjust the spacing between the button and the text */
+}
+
+/* Split-right: Image */
+.split-right {
+  flex: 1; /* Takes up 50% of the available space */
+  overflow: hidden;
+  position: relative;
+  margin-right: 100px;
+}
+
+/* Optional: Centered content for the left side */
+.center {
+  position: relative;
+  z-index: 1; /* Ensure text is on top */
+  color: #333; /* Text color */
+  font-size: 2rem;
+}
+
+/* Optional: Button styling */
+.order-button {
+  padding: 10px 20px;
+  background-color: #f1e9a4;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.order-button:hover {
+  background-color:#ede57e;
+  color: whitesmoke;
+}
+
+.order-button:active {
+  background-color: #f1e550 ;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+/*gallery 4*/
+
+.slider .title-location{
+  text-align: center;
+}
+
+div.gallery {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Description styling */
+div.desc {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Container for the gallery section */
+.gallery4 {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f5d9 ;
+  font-size: 27px;
+  height: 100%; /* Ensure it takes full height */
+  justify-content: flex-end; /* Push the content to the bottom */
+  padding-bottom: 20px; /* Optional, adjust space at the bottom */
+}
+
+.gallery4 .title {
+  text-align: center;
+  margin-top: 35px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: bold;
+  margin-bottom: 10px; /* Optional: Add some spacing between the title and the content below */
+}
+
+/* Centered paragraph */
+.paragraph {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Gallery layout using Flexbox */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Space out the items */
+}
+
+.responsive {
+  flex: 1 1 24%; /* Default to 4 items per row */
+  padding: 6px;
+  margin: 10px;
+  box-sizing: border-box;
+  border: 3px solid #ccc;  /* Apply border to each image container */
+  border-radius: 8px; /* Optional: rounded corners for each image */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow effect for the image */
+}
+
+/* Hover effect for image border */
+.responsive:hover {
+  border-color: #777; /* Change border color on hover */
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    flex: 1 1 49%; /* Two items per row on smaller screens */
+    margin: 6px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    flex: 1 1 100%; /* One item per row on extra small screens */
+  }
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*slider gallery*/
+
+/* Basic styling for slider */
+/* Slider container */
+.slider {
+  position: relative;
+  width: 600px;
+  height:800px;
+  max-width: 800px;  /* Slider container width */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* List of images */
+.list {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition effect */
+}
+
+/* Each item (image container) */
+.item {
+  flex: 0 0 100%; /* Each item takes 100% width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Window-shaped images (16:9 aspect ratio) */
+.item img {
+  width: 100%;   /* Make the image width 100% of the container */
+  height: auto;  /* Maintain aspect ratio */
+  max-height: 100%; /* Ensure height doesn't exceed container height */
+  object-fit: cover; 
+  border-top-left-radius: 600px;
+  border-top-right-radius: 600px;
+}
+
+/* Navigation buttons (Prev and Next) */
+  .buttons {
+    position: absolute;
+    top: 50%;  /* Adjust vertical positioning */
+    left: 10px; /* Move to the left side of the slider */
+    right: 10px; /* Move to the right side of the slider */
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%); /* Keep them vertically centered */
+    z-index: 10; /* Ensure the buttons stay on top of images */
+  }
+
+  
+#prev, #next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#prev:hover, #next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots navigation */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dots li {
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots li.active {
+  background-color: rgba(255, 255, 255, 1);
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <link rel="icon" type="image/x-icon" href="/ASSETS/logo.jpg"/>
+        <title>HOU HOU SANDWICH BAR</title>
+        <link href="contact.css" rel="stylesheet"/>
+        <script src="contact.js" defer></script>
+
+        <!--font style for lcoation title-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chango&display=swap" rel="stylesheet">
+
+        <!---symbol or logo-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    </head>
+    <body>
+        <div class="page-header">
+            <div class="logo">
+                <p>Logo</p>
+            </div>
+            <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+                <i class="fa-solid fa-bars"></i> 
+            </a>
+            <div id="navigation-bar" class="nav-bar">
+                <a href="home.html">home</a>
+                <a href="story.html">story</a>
+                <a href="order">order</a>
+                <a href="location.html">location</a>
+                <a class="active" href="contact.html">contact</a>
+            </div>
+            
+
+            <div class="header-right"><button>Sign in</button></div>
+        </div>
+        <div class="form contact">
+            <!-- Left side: Contact details -->
+            <div class="left-side">
+                <div class="text">
+                    <h1>Get in Touch</h1>
+                    <p>26 Jalan Pangkor<br>10050 Georgetown</p>
+                    <p>+6016 597 2170<br>3sandwich@gmail.com</p>
+                </div>
+            </div>
+        
+            <!-- Right side: Form inputs -->
+            <div class="right-side">
+                <div class="details">
+                    <div class="fname">
+                        <label for="Fname">First Name </label>&nbsp;
+                        <input type="text" id="Fname" name="Fname" placeholder="" required>
+                        <span id="Fname_error" class="error"></span>
+                    </div>
+        
+                    <div class="lname">
+                        <label for="Lname">Last Name </label>
+                        <input type="text" id="Lname" name="Lname" placeholder="" required>
+                        <span  id="Lname_error" class="error"></span>
+                    </div>
+        
+                    <div class="email">
+                        <label for="email">Email </label>
+                        <input type="text" id="email" name="email" placeholder="" required>
+                        <span id="email_error" class="error"></span>
+                    </div>
+        
+                    <div class="message">
+                        <label for="message">Message </label><br>
+                        <textarea id="message" name="message" required></textarea>
+                        <span id="message_error" class="error"></span>
+                    </div>
+        
+                    <div class="button">
+                        <button type="button" id="button">s u b m i t</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--form validation-->
+        <script>
+            const Fname = document.getElementById('Fname');
+            const Lname = document.getElementById('Lname');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            const button = document.getElementById('button');
+            
+            const Fname_error = document.getElementById('Fname_error');
+            const Lname_error = document.getElementById('Lname_error');
+            const email_error = document.getElementById('email_error');
+            const message_error = document.getElementById('message_error');
+
+
+            button.addEventListener('click', function(event) {
+                const email_check = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email regex pattern
+                let valid = true;
+
+                Fname_error.innerHTML="";
+                Lname_error.innerHTML="";
+                email_error.innerHTML="";
+                message_error.innerHTML="";
+        
+                // Validate First Name and Last Name
+                if (Fname.value === '') {
+                
+                    Fname_error.innerHTML = "First name are required."; // Show error message
+                    valid = false;
+                }
+
+                if (Lname.value === '') {
+                    Lname_error.innerHTML = "Last name are required."; // Show error message
+                    valid = false;
+                }
+        
+                // Validate Email
+                if (!email.value.match(email_check)) {
+                    email_error.innerHTML = "Valid email is required."; // Append error message
+                    valid = false;
+                }
+        
+                // Optionally validate Message if needed
+                if (message.value === '') {
+                    message_error.innerHTML = "Message is required."; // Append error message
+                    valid = false;
+                }
+        
+                // If all fields are valid, you can submit the form here
+                if (!valid) {
+                   event.preventDefault();
+                }
+            });
+        </script>
+
+            <!-- location slide show -->
+<div class="slider">
+    <div class="title-locationos">
+        <h1 class="loc-title">locations</h1>
+    </div>
+    
+    <div class="list">
+
+       
+        <div class="item">
+            <img src="/ASSETS/location1.jpg" alt="Location 1">
+        </div>
+
+        <div class="item">
+            <img src="/ASSETS/location2.jpg" alt="Location 2">
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button id="prev" class="arrow-btn">&#10094;</button>
+        <button id="next" class="arrow-btn">&#10095;</button>
+    </div>
+
+    <!-- Dots -->
+    <ul class="dots">
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+        <!-- Left side -->
+        <div class="footer-left">
+            <div class="contact-info">
+                <h3>houhousandwichbar@gmail.com</h3>
+                <h3>+60123456789</h3>
+                <h4>General terms & conditions</h4>
+                <h4>Privacy Policy</h4>
+            </div>
+
+            <!-- Footer icons beside the text -->
+            <div class="footer-icon">
+                <a href="mailto:houhousandwichbar@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="tel:+60123456789">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right side -->
+        <div class="footer-right">
+            <h3>© HOU HOU SANDWICH BAR RESERVED</h3>
+        </div>
+    </div>
+</footer>
+     
+    </body>
+</html>
